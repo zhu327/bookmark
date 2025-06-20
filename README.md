@@ -1,3 +1,4 @@
+- [CMDB平台建设指南](https://wiki.eryajf.net/pages/4bcf72/)
 
 # About
 
