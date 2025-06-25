@@ -1,3 +1,4 @@
+- [AI编程提示词实战：拆解Cloudflare开源项目的90个Prompt](https://mp.weixin.qq.com/s/FjUKUTknE9wzjoQl6iOk9Q)
 - [CMDB平台建设指南](https://wiki.eryajf.net/pages/4bcf72/)
 - [A faster way to copy SQLite databases between computers – alexwlchan](https://alexwlchan.net/2025/copying-sqlite-databases/)
 - [防迷路（建议保存） - WorkFlowy](https://workflowy.com/s/ff4ac3a19545/tEvTraNzl9fk1fJA#/dd11baf6866b)
