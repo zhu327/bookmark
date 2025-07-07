@@ -525,6 +525,14 @@
 ### Go
 
 
+**标题:** Structured errors in Go | barney's tech blog
+
+**链接:** https://southcla.ws/structured-errors-in-go
+
+**摘要:** Go语言的错误处理依赖返回值，但日志不够结构化，影响诊断。作者开发了新库fault，利用上下文为错误添加元数据，便于日志记录和错误处理，提高易用性和诊断效率。库设计简单，兼容现有代码，避免PII泄露，并通过示例展示使用方法。
+
+---
+
 **标题:** Go Optimization Guide
 
 **链接:** https://goperf.dev/
