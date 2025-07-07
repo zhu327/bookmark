@@ -23,6 +23,10 @@ jobs:
       # 使得工作流可以访问你的代码
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # 关键修复：获取完整的 git 历史记录，而不仅仅是最后一次提交
+          # 默认的浅克隆 (depth=1) 会导致 git log -n 2 失败
+          fetch-depth: 0
 
       # 第二步：设置 Python 环境
       # 指定使用 Python 3.11 版本
