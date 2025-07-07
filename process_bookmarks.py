@@ -124,6 +124,7 @@ def categorize_with_openai(title: str, summary: str, existing_categories: list[s
         response.raise_for_status()
         response_data = response.json()
         category = response_data['choices'][0]['message']['content'].strip()
+        # 移除AI可能返回的多余字符
         category = re.sub(r'^[#*"\s]+|[#*"\s]+$', '', category)
         return category
     except requests.RequestException as e:
@@ -194,23 +195,38 @@ def get_file_last_change_diff_text(file_path: str, repo_path: str) -> str | None
         return None
 
 
-# --- 文件处理函数 (保持不变) ---
+# --- 文件处理函数 ---
+
+# --- [已修改] 更新分类解析函数以支持子分类 ---
 def parse_categories_from_file(file_path: str) -> list[str]:
+    """
+    从文件中解析H2(##)和H3(###)标题作为分类。
+    """
     if not os.path.exists(file_path):
         return []
     categories = []
-    category_pattern = re.compile(r'^##\s+(?:[^\s]+\s+)?(.+)')
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             for line in f:
-                match = category_pattern.match(line)
-                if match:
-                    categories.append(match.group(1).strip())
+                line = line.strip()
+                # 同时匹配 H2 和 H3 标题
+                if line.startswith('## ') or line.startswith('### '):
+                    # 剥离 '## ' 或 '### ' 标记
+                    header_content = line.lstrip('#').strip()
+                    # 分割以处理可选的 emoji (e.g., "🚀 AI 与大模型" -> "AI 与大模型")
+                    parts = header_content.split(maxsplit=1)
+                    # 真正的分类名是最后一部分
+                    category_name = parts[-1]
+                    categories.append(category_name)
     except IOError as e:
         print(f"错误: 无法读取分类文件 '{file_path}': {e}", file=sys.stderr)
     return categories
 
+# --- [已修改] 更新文章插入函数以支持子分类 ---
 def insert_article_to_category_file(file_path: str, category: str, title: str, url: str, summary: str):
+    """
+    将文章插入到指定的分类下，支持H2和H3级别的分类。
+    """
     try:
         if not os.path.exists(file_path):
             with open(file_path, 'w', encoding='utf-8') as f:
@@ -223,36 +239,52 @@ def insert_article_to_category_file(file_path: str, category: str, title: str, u
 
     article_text = f"**标题:** {title}\n\n**链接:** {url}\n\n**摘要:** {summary}"
     category_header_index = -1
+
+    # 精确查找分类标题（H2或H3）
     for i, line in enumerate(lines):
-        if line.startswith("## ") and category in line:
-            category_header_index = i
-            break
+        stripped_line = line.strip()
+        if stripped_line.startswith('## ') or stripped_line.startswith('### '):
+            header_content = stripped_line.lstrip('#').strip()
+            parts = header_content.split(maxsplit=1)
+            name_in_header = parts[-1]
+            if name_in_header == category:
+                category_header_index = i
+                break
 
     if category_header_index != -1:
         print(f"    > 分类 '{category}' 已存在，正在查找插入位置...")
         first_article_index = -1
+        # 在找到的分类标题下，寻找第一个文章条目
         for i in range(category_header_index + 1, len(lines)):
             if lines[i].strip().startswith("**标题:**"):
                 first_article_index = i
                 break
+
         if first_article_index != -1:
+            # 如果分类下已有文章，插入到最前面
             insertion_text = f"{article_text}\n\n---\n\n"
             lines.insert(first_article_index, insertion_text)
             print(f"    -> 成功将文章插入到 '{category}' 分类顶部。")
         else:
+            # 如果分类下没有文章，找到该分类的末尾
             end_of_section_index = len(lines)
             for i in range(category_header_index + 1, len(lines)):
-                if lines[i].startswith("## "):
+                # 分类的末尾是下一个任意级别的标题
+                if lines[i].startswith("##"): # '##'可以匹配'## '和'### '
                     end_of_section_index = i
                     break
             insertion_text = f"\n{article_text}\n"
+            # 在该分类末尾（或下一个标题前）插入文章
             lines.insert(end_of_section_index, insertion_text)
             print(f"    -> 成功将文章添加到空的 '{category}' 分类下。")
     else:
+        # 如果是新分类，默认在文件末尾创建为H2主分类
         print(f"    > 分类 '{category}' 是新分类，将在文件末尾创建。")
+        if lines and not lines[-1].endswith('\n'):
+            lines.append("\n")
         if lines and lines[-1].strip() != "":
             lines.append("\n")
-        emojis = ["🧩", "🔧", "💡", "📚", "🧭", "💡", "✨"]
+        emojis = ["🧩", "🔧", "💡", "📚", "🧭", "✨"]
         new_category_header = f"## {random.choice(emojis)} {category}\n"
         lines.append(new_category_header)
         lines.append("\n")
@@ -330,6 +362,7 @@ if __name__ == "__main__":
                                 link_data['url'],
                                 summary
                             )
+                            # 如果AI创建了一个全新的分类，将其加入列表，供后续链接使用
                             if chosen_category not in existing_categories:
                                 existing_categories.append(chosen_category)
                             print(f"  [成功] 文章已自动归档到 '{CATEGORY_FILE}'。\n")
