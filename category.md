@@ -341,6 +341,14 @@
 本类别汇集了关于AI Agent、大模型应用开发、Prompt工程、LLM原理等人工智能前沿技术的文章与资源。
 
 
+**标题:** Manus「删博跑路」后，创始人首次深度复盘：公开产品细节，总结教训
+
+**链接:** https://mp.weixin.qq.com/s/6WpXcWVRAWqCYllUqm5P1A
+
+**摘要:** Manus AI创始人季逸超在公司撤出中国市场后，发布技术博客深度复盘AI Agent构建经验。核心教训包括：押注上下文工程、优化KV-cache命中率（通过稳定提示前缀、避免动态工具修改）、用文件系统承载持久上下文、重写ToDo清单操控注意力、保留错误日志以减少重复错误。这些经验强调上下文工程的关键性，对AI开发者极具参考价值。（约98字）
+
+---
+
 **标题:** [译] AI Agent（智能体）技术白皮书（Google，224）
 
 **链接:** https://arthurchiao.art/blog/ai-agent-white-paper-zh/
