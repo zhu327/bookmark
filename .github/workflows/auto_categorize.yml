@@ -50,6 +50,8 @@ jobs:
           # 你需要在仓库的 Settings > Secrets and variables > Actions 中设置这些
           LLM_API_URL: ${{ secrets.LLM_API_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           LLM_MODEL_NAME: 'deepseek-ai/DeepSeek-R1-0528-Qwen3-8B' # 你也可以将此模型名称设置为一个 Secret 或 Variable
         run: python process_bookmarks.py
 

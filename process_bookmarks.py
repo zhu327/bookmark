@@ -12,10 +12,10 @@ INPUT_FILE = "README.md"
 CATEGORY_FILE = "category.md"
 
 
-# --- [新增] 从环境变量获取 API 配置 ---
+# --- [新增] 从环境变量获取 LLM API 配置 ---
 def get_api_config() -> dict | None:
     """
-    从环境变量中获取并验证 API 配置。
+    从环境变量中获取并验证 LLM API 配置。
 
     Returns:
         dict: 包含 api_url, api_key, model 的字典，如果缺少任何必要配置则返回 None。
@@ -36,6 +36,27 @@ def get_api_config() -> dict | None:
     model = os.getenv("LLM_MODEL_NAME", "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B")
 
     return {"api_url": api_url, "api_key": api_key, "model": model}
+
+
+# --- [新增] 从环境变量获取 Cloudflare API 配置 ---
+def get_cloudflare_config() -> dict | None:
+    """
+    从环境变量中获取并验证 Cloudflare API 配置。
+
+    Returns:
+        dict: 包含 account_id 和 api_token 的字典，如果缺少则返回 None。
+    """
+    account_id = os.getenv("CLOUDFLARE_ACCOUNT_ID")
+    if not account_id:
+        print("错误: 缺少环境变量 'CLOUDFLARE_ACCOUNT_ID'。无法使用 Cloudflare 获取微信文章。", file=sys.stderr)
+        return None
+
+    api_token = os.getenv("CLOUDFLARE_API_TOKEN")
+    if not api_token:
+        print("错误: 缺少环境变量 'CLOUDFLARE_API_TOKEN'。无法使用 Cloudflare 获取微信文章。", file=sys.stderr)
+        return None
+
+    return {"account_id": account_id, "api_token": api_token}
 
 
 # --- [已修改] 使用环境变量配置的 OpenAI API 函数 ---
@@ -137,6 +158,73 @@ def categorize_with_openai(title: str, summary: str, existing_categories: list[s
         return None
 
 
+# --- [新增] 使用 Cloudflare 获取微信公众号内容 ---
+def fetch_content_with_cloudflare(url: str) -> str | None:
+    """
+    使用 Cloudflare 浏览器渲染和 AI Markdown 转换获取文章内容。
+    专为解决微信公众号等难以抓取的网站设计。
+    """
+    config = get_cloudflare_config()
+    if not config:
+        return None
+
+    account_id = config["account_id"]
+    api_token = config["api_token"]
+
+    headers = {"Authorization": f"Bearer {api_token}"}
+
+    # 第 1 步: 使用浏览器渲染获取 HTML
+    render_url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/browser-rendering/content"
+    render_payload = {"url": url}
+    
+    try:
+        print(f"    > 正在通过 Cloudflare 浏览器渲染获取 HTML: {url}")
+        # 渲染可能耗时较长，设置更长的超时时间
+        response = requests.post(render_url, headers={"Content-Type": "application/json", **headers}, json=render_payload, timeout=600)
+        response.raise_for_status()
+        render_data = response.json()
+
+        if not render_data.get("success"):
+            print(f"    > Cloudflare 浏览器渲染失败: {render_data.get('errors')}", file=sys.stderr)
+            return None
+        
+        html_content = render_data['result']
+
+    except requests.RequestException as e:
+        print(f"    > Cloudflare 浏览器渲染请求失败: {e}", file=sys.stderr)
+        if e.response is not None:
+             print(f"    > 响应内容: {e.response.text}", file=sys.stderr)
+        return None
+    except (KeyError, TypeError):
+        print(f"    > Cloudflare 浏览器渲染响应格式不正确。", file=sys.stderr)
+        return None
+
+    # 第 2 步: 将 HTML 转换为 Markdown
+    markdown_url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/tomarkdown"
+    files = {"file": (f"{random.randint(1,1000)}.html", html_content, "text/html")}
+
+    try:
+        print("    > 正在通过 Cloudflare AI 将 HTML 转换为 Markdown...")
+        response = requests.post(markdown_url, headers=headers, files=files, timeout=600)
+        response.raise_for_status()
+        markdown_data = response.json()
+
+        if not markdown_data.get("success"):
+            print(f"    > Cloudflare Markdown 转换失败: {markdown_data.get('errors')}", file=sys.stderr)
+            return None
+
+        return markdown_data.get("result", {}).get("data", "").strip()
+
+    except requests.RequestException as e:
+        print(f"    > Cloudflare Markdown 转换请求失败: {e}", file=sys.stderr)
+        if e.response is not None:
+             print(f"    > 响应内容: {e.response.text}", file=sys.stderr)
+        return None
+    except (KeyError, TypeError):
+         print(f"    > Cloudflare Markdown 转换响应格式不正确。", file=sys.stderr)
+         return None
+
+
 # --- Jina Reader 函数 (保持不变) ---
 def fetch_content_with_jina(url: str) -> str | None:
     jina_reader_url = f"https://r.jina.ai/{url}"
@@ -155,6 +243,20 @@ def fetch_content_with_jina(url: str) -> str | None:
     except requests.RequestException as e:
         print(f"    > Jina Reader API 请求失败: {e}", file=sys.stderr)
         return None
+
+
+# --- [新增] 内容获取调度函数 ---
+def fetch_article_content(url: str) -> str | None:
+    """
+    根据 URL 类型选择合适的抓取器 (Cloudflare 或 Jina)。
+    优先处理微信公众号链接。
+    """
+    if "mp.weixin.qq.com" in url:
+        print("  > 检测到微信公众号链接，将使用 Cloudflare 抓取...")
+        return fetch_content_with_cloudflare(url)
+    else:
+        print("  > 使用 Jina Reader 抓取...")
+        return fetch_content_with_jina(url)
 
 
 # --- Git 和解析相关的函数 (保持不变) ---
@@ -196,8 +298,6 @@ def get_file_last_change_diff_text(file_path: str, repo_path: str) -> str | None
 
 
 # --- 文件处理函数 ---
-
-# --- [已修改] 更新分类解析函数以支持子分类 ---
 def parse_categories_from_file(file_path: str) -> list[str]:
     """
     从文件中解析H2(##)和H3(###)标题作为分类。
@@ -209,20 +309,15 @@ def parse_categories_from_file(file_path: str) -> list[str]:
         with open(file_path, 'r', encoding='utf-8') as f:
             for line in f:
                 line = line.strip()
-                # 同时匹配 H2 和 H3 标题
                 if line.startswith('## ') or line.startswith('### '):
-                    # 剥离 '## ' 或 '### ' 标记
                     header_content = line.lstrip('#').strip()
-                    # 分割以处理可选的 emoji (e.g., "🚀 AI 与大模型" -> "AI 与大模型")
                     parts = header_content.split(maxsplit=1)
-                    # 真正的分类名是最后一部分
                     category_name = parts[-1]
                     categories.append(category_name)
     except IOError as e:
         print(f"错误: 无法读取分类文件 '{file_path}': {e}", file=sys.stderr)
     return categories
 
-# --- [已修改] 更新文章插入函数以支持子分类 ---
 def insert_article_to_category_file(file_path: str, category: str, title: str, url: str, summary: str):
     """
     将文章插入到指定的分类下，支持H2和H3级别的分类。
@@ -240,7 +335,6 @@ def insert_article_to_category_file(file_path: str, category: str, title: str, u
     article_text = f"**标题:** {title}\n\n**链接:** {url}\n\n**摘要:** {summary}"
     category_header_index = -1
 
-    # 精确查找分类标题（H2或H3）
     for i, line in enumerate(lines):
         stripped_line = line.strip()
         if stripped_line.startswith('## ') or stripped_line.startswith('### '):
@@ -254,31 +348,25 @@ def insert_article_to_category_file(file_path: str, category: str, title: str, u
     if category_header_index != -1:
         print(f"    > 分类 '{category}' 已存在，正在查找插入位置...")
         first_article_index = -1
-        # 在找到的分类标题下，寻找第一个文章条目
         for i in range(category_header_index + 1, len(lines)):
             if lines[i].strip().startswith("**标题:**"):
                 first_article_index = i
                 break
 
         if first_article_index != -1:
-            # 如果分类下已有文章，插入到最前面
             insertion_text = f"{article_text}\n\n---\n\n"
             lines.insert(first_article_index, insertion_text)
             print(f"    -> 成功将文章插入到 '{category}' 分类顶部。")
         else:
-            # 如果分类下没有文章，找到该分类的末尾
             end_of_section_index = len(lines)
             for i in range(category_header_index + 1, len(lines)):
-                # 分类的末尾是下一个任意级别的标题
-                if lines[i].startswith("##"): # '##'可以匹配'## '和'### '
+                if lines[i].startswith("##"):
                     end_of_section_index = i
                     break
             insertion_text = f"\n{article_text}\n"
-            # 在该分类末尾（或下一个标题前）插入文章
             lines.insert(end_of_section_index, insertion_text)
             print(f"    -> 成功将文章添加到空的 '{category}' 分类下。")
     else:
-        # 如果是新分类，默认在文件末尾创建为H2主分类
         print(f"    > 分类 '{category}' 是新分类，将在文件末尾创建。")
         if lines and not lines[-1].endswith('\n'):
             lines.append("\n")
@@ -305,7 +393,7 @@ if __name__ == "__main__":
     # 检查 API 配置是否齐全
     api_config = get_api_config()
     if not api_config:
-        print("启动失败：请先根据提示设置好必要的环境变量。", file=sys.stderr)
+        print("启动失败：请先根据提示设置好必要的 LLM 环境变量。", file=sys.stderr)
         sys.exit(1)
 
     print(f"  - 输入文件: {INPUT_FILE}")
@@ -340,7 +428,8 @@ if __name__ == "__main__":
                 print(f"  原始标题: {link_data['title']}")
                 print(f"  原始链接: {link_data['url']}")
 
-                content = fetch_content_with_jina(link_data['url'])
+                # [修改] 使用新的调度函数获取内容
+                content = fetch_article_content(link_data['url'])
 
                 if content:
                     summary = summarize_with_openai(content)
