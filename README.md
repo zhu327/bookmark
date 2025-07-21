@@ -1,3 +1,4 @@
+- [Manus「删博跑路」后，创始人首次深度复盘：公开产品细节，总结教训](https://mp.weixin.qq.com/s/6WpXcWVRAWqCYllUqm5P1A)
 - [AI编程提示词实战：拆解Cloudflare开源项目的90个Prompt](https://mp.weixin.qq.com/s/FjUKUTknE9wzjoQl6iOk9Q)
 - [CMDB平台建设指南](https://wiki.eryajf.net/pages/4bcf72/)
 - [A faster way to copy SQLite databases between computers – alexwlchan](https://alexwlchan.net/2025/copying-sqlite-databases/)
