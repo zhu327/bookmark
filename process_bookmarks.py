@@ -86,7 +86,7 @@ def summarize_with_openai(content: str) -> str | None:
 
     try:
         print("    > 正在通过 requests 请求 LLM 生成摘要...")
-        response = requests.post(config['api_url'], headers=headers, json=payload, timeout=60)
+        response = requests.post(config['api_url'], headers=headers, json=payload, timeout=600)
         response.raise_for_status()
         response_data = response.json()
         summary = response_data['choices'][0]['message']['content']
@@ -143,7 +143,7 @@ def categorize_with_openai(title: str, summary: str, existing_categories: list[s
 
     try:
         print("    > 正在通过 requests 请求 LLM 进行分类...")
-        response = requests.post(config['api_url'], headers=headers, json=payload, timeout=60)
+        response = requests.post(config['api_url'], headers=headers, json=payload, timeout=600)
         response.raise_for_status()
         response_data = response.json()
         category = response_data['choices'][0]['message']['content'].strip()
@@ -202,7 +202,7 @@ def fetch_content_with_cloudflare(url: str) -> str | None:
         return None
 
     # 第 2 步: 将 HTML 转换为 Markdown
-    return md(html_content, strip=['a', 'img', 'script', 'style'], convert_links=False).strip()
+    return md(html_content).strip()
 
 
 # --- Jina Reader 函数 (保持不变) ---
