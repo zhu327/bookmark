@@ -5,7 +5,6 @@ import re
 import requests
 import random
 
-from markdownify import markdownify as md
 
 # --- [新增] 全局配置常量 ---
 # 输入文件，脚本将检查此文件的 git diff
@@ -202,7 +201,36 @@ def fetch_content_with_cloudflare(url: str) -> str | None:
         return None
 
     # 第 2 步: 将 HTML 转换为 Markdown
-    return md(html_content).strip()
+    markdown_url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/tomarkdown"
+    files = {
+        "files": ("virtual_file.html", html_content, "text/html")
+    }
+
+    try:
+        print(f"    > 正在通过 Cloudflare AI 将 HTML 转换为 Markdown...")
+        response = requests.post(markdown_url, headers=headers, files=files, timeout=600)
+        response.raise_for_status()
+        markdown_data = response.json()
+
+        if not markdown_data.get("success"):
+            print(f"    > Cloudflare AI Markdown 转换失败: {markdown_data.get('errors')}", file=sys.stderr)
+            return None
+
+        markdown_result = markdown_data.get('result', [])
+        if not markdown_result:
+            print("    > Cloudflare AI Markdown 转换未返回任何结果。", file=sys.stderr)
+            return None
+
+        markdown_content = markdown_result[0].get('data', '')
+        if not markdown_content:
+            print("    > Cloudflare AI Markdown 转换未返回任何内容。", file=sys.stderr)
+            return None
+        return markdown_content.strip()
+    except requests.RequestException as e:
+        print(f"    > Cloudflare AI Markdown 转换请求失败: {e}", file=sys.stderr)
+        if e.response is not None:
+             print(f"    > 响应内容: {e.response.text}", file=sys.stderr)
+        return None
 
 
 # --- Jina Reader 函数 (保持不变) ---
