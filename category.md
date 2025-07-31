@@ -341,6 +341,14 @@
 本类别汇集了关于AI Agent、大模型应用开发、Prompt工程、LLM原理等人工智能前沿技术的文章与资源。
 
 
+**标题:** AI 编程不靠运气，Kiro Spec 工作流复刻全攻略
+
+**链接:** https://mp.weixin.qq.com/s/3j6lG50isbuSH4p64TsNag
+
+**摘要:** AI编程不再靠运气，Kiro Spec工作流通过结构化需求、技术设计和任务清单，将模糊想法转化为可执行计划，确保开发可控、高效。该方法强调人机协作，AI负责生成代码和文档，人负责评审和决策。即使在Cursor、Claude Code等AI IDE中也能轻松复刻，实现开发提速、提质、可复盘。
+
+---
+
 **标题:** Manus「删博跑路」后，创始人首次深度复盘：公开产品细节，总结教训
 
 **链接:** https://mp.weixin.qq.com/s/6WpXcWVRAWqCYllUqm5P1A
