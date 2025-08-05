@@ -1,3 +1,4 @@
+- [软件架构编年史](https://www.jianshu.com/p/b477b2cc6cfa)
 - [AI 编程不靠运气，Kiro Spec 工作流复刻全攻略](https://mp.weixin.qq.com/s/3j6lG50isbuSH4p64TsNag)
 - [Speeding Up My ZSH Shell ⚡ - Scott Spence](https://scottspence.com/posts/speeding-up-my-zsh-shell)
 - [Manus「删博跑路」后，创始人首次深度复盘：公开产品细节，总结教训](https://mp.weixin.qq.com/s/6WpXcWVRAWqCYllUqm5P1A)
