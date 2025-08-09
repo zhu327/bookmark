@@ -1,3 +1,4 @@
+- [《架构整洁之道》-读书笔记](https://niexiaotao.cn/2021/12/26/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/)
 - [软件架构编年史](https://www.jianshu.com/p/b477b2cc6cfa)
 - [AI 编程不靠运气，Kiro Spec 工作流复刻全攻略](https://mp.weixin.qq.com/s/3j6lG50isbuSH4p64TsNag)
 - [Speeding Up My ZSH Shell ⚡ - Scott Spence](https://scottspence.com/posts/speeding-up-my-zsh-shell)
