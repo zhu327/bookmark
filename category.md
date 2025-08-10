@@ -357,6 +357,14 @@
 本类别汇集了关于AI Agent、大模型应用开发、Prompt工程、LLM原理等人工智能前沿技术的文章与资源。
 
 
+**标题:** How I Code with AI on a budget/free
+
+**链接:** https://wuu73.org/blog/aiguide1.html
+
+**摘要:** 作者分享了如何在预算有限的情况下使用免费AI模型（如OpenAI Playground、Google Gemini等）进行编码。通过多模型组合，获取不同视角，但需注意Grok可能存在的安全风险。核心是使用AI Code Prep工具，递归扫描项目代码，生成精简上下文，避免代理工具的过度简化问题。该工具支持跨平台，帮助AI更高效地解决编码难题，尤其适合大型项目。
+
+---
+
 **标题:** AI 编程不靠运气，Kiro Spec 工作流复刻全攻略
 
 **链接:** https://mp.weixin.qq.com/s/3j6lG50isbuSH4p64TsNag
