@@ -1,3 +1,4 @@
+- [Stop Overthinking Obsidian: A Beginner’s Guide That Actually Works](https://medium.com/@andremonthy/stop-overthinking-obsidian-a-beginners-guide-that-actually-works-c46ae9953ac7)
 - [Everything I know about good system design](https://www.seangoedecke.com/good-system-design/)
 - [How I Code with AI on a budget/free](https://wuu73.org/blog/aiguide1.html)
 - [《架构整洁之道》-读书笔记](https://niexiaotao.cn/2021/12/26/%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/)
