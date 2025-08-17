@@ -1251,6 +1251,14 @@
 本类别收录了各种开发工具、框架、效率软件以及能提升生产力的实践和资源。
 
 
+**标题:** Stop Overthinking Obsidian: A Beginner’s Guide That Actually Works
+
+**链接:** https://medium.com/@andremonthy/stop-overthinking-obsidian-a-beginners-guide-that-actually-works-c46ae9953ac7
+
+**摘要:** Andre Monthy分享了从Notion迁移到Obsidian的经验，强调不要过度复杂化。核心建议是先开始写笔记，使用MOCs和标签代替文件夹，创建Home MOC和Daily Notes作为基础。链接笔记通过标签或MOC引用，Obsidian搜索功能强大，优先写作而非完美设置。避免过多插件，保持简约。（78字）
+
+---
+
 **标题:** Speeding Up My ZSH Shell ⚡ - Scott Spence
 
 **链接:** https://scottspence.com/posts/speeding-up-my-zsh-shell
