@@ -52,7 +52,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          LLM_MODEL_NAME: 'deepseek-ai/DeepSeek-R1-0528-Qwen3-8B' # 你也可以将此模型名称设置为一个 Secret 或 Variable
+          LLM_MODEL_NAME: 'openai/gpt-4.1-mini' # 你也可以将此模型名称设置为一个 Secret 或 Variable
         run: python process_bookmarks.py
 
       # 第五步：提交并推送变更
