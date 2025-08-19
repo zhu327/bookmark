@@ -1,3 +1,4 @@
+- [白话经济学十大原理：这些“道理”，藏在每天的生活里](https://www.tmtpost.com/7631692.html)
 - [Stop Overthinking Obsidian: A Beginner’s Guide That Actually Works](https://medium.com/@andremonthy/stop-overthinking-obsidian-a-beginners-guide-that-actually-works-c46ae9953ac7)
 - [Everything I know about good system design](https://www.seangoedecke.com/good-system-design/)
 - [How I Code with AI on a budget/free](https://wuu73.org/blog/aiguide1.html)
