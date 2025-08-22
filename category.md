@@ -466,6 +466,14 @@
 本类别关注系统运维、网站可靠性工程(SRE)、高可用架构、性能压测、监控、CMDB建设及网络性能优化等主题。
 
 
+**标题:** Using Podman, Compose and BuildKit · emersion
+
+**链接:** https://emersion.fr/blog/2025/using-podman-compose-and-buildkit/
+
+**摘要:** 作者因Docker与nftables兼容性差，偏好无守护进程的rootless方案，选择Podman运行Docker Compose项目。Podman支持两种方式运行Compose，但各有缺陷：官方Docker Compose CLI不支持BuildKit，podman-compose缺少部分功能。作者探索让Docker Compose CLI在Podman下启用BuildKit，成功通过配置Podman socket和Docker上下文实现，并用systemd管理BuildKit服务。为避免守护进程，作者利用Compose的Bake功能生成JSON构建描述，开发了Bakah工具，借助Buildah替代Podman构建镜像，实现无守护进程构建复杂Compose项目，提升了构建灵活性和效率。
+
+---
+
 **标题:** CMDB平台建设指南
 
 **链接:** https://wiki.eryajf.net/pages/4bcf72/
