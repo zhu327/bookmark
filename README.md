@@ -1,3 +1,4 @@
+- [任天堂Switch销量超百万的游戏列表及下载](https://mianao.info/nintendo-switch-games-list-download/)
 - [Using Podman, Compose and BuildKit · emersion](https://emersion.fr/blog/2025/using-podman-compose-and-buildkit/)
 - [白话经济学十大原理：这些“道理”，藏在每天的生活里](https://www.tmtpost.com/7631692.html)
 - [Stop Overthinking Obsidian: A Beginner’s Guide That Actually Works](https://medium.com/@andremonthy/stop-overthinking-obsidian-a-beginners-guide-that-actually-works-c46ae9953ac7)
