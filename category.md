@@ -367,6 +367,14 @@
 本类别汇集了关于AI Agent、大模型应用开发、Prompt工程、LLM原理等人工智能前沿技术的文章与资源。
 
 
+**标题:** A Guide to Gen AI / LLM Vibecoding for Expert Programmers - Stochastic Lifestyle
+
+**链接:** https://www.stochasticlifestyle.com/a-guide-to-gen-ai-llm-vibecoding-for-expert-programmers/
+
+**摘要:** 本文作者是一位资深开发者，分享了“vibe coding”（利用大型语言模型辅助编程）的实践经验。作者将LLM比作“大学二年级实习生”，强调专家应以团队领导者角色管理这些“虚拟实习生”，通过分配熟悉代码库的简单任务并严格审查结果，实现高效协作。成功的vibe coding依赖于对代码的深刻理解和有效管理，适合处理熟悉项目中的琐碎工作，而非复杂难题。作者指出，vibe coding虽耗费资源且需耐心筛选，但能显著提升产出，是专家加速开发的新工具。
+
+---
+
 **标题:** How I Code with AI on a budget/free
 
 **链接:** https://wuu73.org/blog/aiguide1.html
