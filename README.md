@@ -1,3 +1,5 @@
+- [It’s School time! Adventures in hacking kindle](https://samkhawase.com/blog/hacking-kindle/)
+- [Nano Banana超多玩法分享，太喜欢这种神仙打架的感觉了。](https://mp.weixin.qq.com/s/4qld0uCYB2zUWyKz5IUdZw)
 - [A Guide to Gen AI / LLM Vibecoding for Expert Programmers - Stochastic Lifestyle](https://www.stochasticlifestyle.com/a-guide-to-gen-ai-llm-vibecoding-for-expert-programmers/)
 - [任天堂Switch销量超百万的游戏列表及下载](https://mianao.info/nintendo-switch-games-list-download/)
 - [Using Podman, Compose and BuildKit · emersion](https://emersion.fr/blog/2025/using-podman-compose-and-buildkit/)
