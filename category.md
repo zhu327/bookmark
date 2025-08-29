@@ -367,6 +367,14 @@
 本类别汇集了关于AI Agent、大模型应用开发、Prompt工程、LLM原理等人工智能前沿技术的文章与资源。
 
 
+**标题:** Nano Banana超多玩法分享，太喜欢这种神仙打架的感觉了。
+
+**链接:** https://mp.weixin.qq.com/s/4qld0uCYB2zUWyKz5IUdZw
+
+**摘要:** 本文作者阿真分享了谷歌最新图像编辑AI模型Nano Banana（NB）的多种应用玩法。NB支持更换人物姿势、背景、服装，进行照片修复、上色及风格转换，表现出色且响应迅速，尤其擅长保持图像一致性和写实效果，适合电商和广告等商业用途。作者还介绍了辅助高清工具和动作参考网站，并对NB的不足如非写实风格转换和多图融合控制提出了看法。整体来看，NB在AI图像编辑领域表现优异，但仍有提升空间，未来或有更多应用探索。
+
+---
+
 **标题:** A Guide to Gen AI / LLM Vibecoding for Expert Programmers - Stochastic Lifestyle
 
 **链接:** https://www.stochasticlifestyle.com/a-guide-to-gen-ai-llm-vibecoding-for-expert-programmers/
@@ -1421,6 +1429,14 @@
 
 本类别包含网络安全、TLS/SSL证书、NAT穿透、设备越狱等相关内容。
 
+
+**标题:** It’s School time! Adventures in hacking kindle
+
+**链接:** https://samkhawase.com/blog/hacking-kindle/
+
+**摘要:** 作者利用kindle越狱技术，将旧kindle改造成学校准备仪表盘。通过安装WinterBreak、USBNetLite实现SSH访问，获得root权限后，禁用原UI框架，定时全屏显示后台API生成的PNG图像。后台基于Cloudflare Workers和Hono JS，整合实时天气、柏林公共交通和学校课表数据，生成HTML仪表盘并截图转为kindle支持的8位灰度PNG。项目稳定运行两周，续航优异，计划与女儿及朋友分享改造经验，旧kindle成为低成本创新设备。代码开源于GitHub。
+
+---
 
 **标题:** 有关 TLS/SSL 证书的一切 | 卡瓦邦噶！
 
