@@ -1,3 +1,4 @@
+- [Cognition | Don’t Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents#applying-the-principles)
 - [Google 发布了Nano Banana编写最佳提示词，提供了10种场景_AI_程序员海军_InfoQ写作社区](https://xie.infoq.cn/article/41d80c048845e0de5113a2988)
 - [It’s School time! Adventures in hacking kindle](https://samkhawase.com/blog/hacking-kindle/)
 - [Nano Banana超多玩法分享，太喜欢这种神仙打架的感觉了。](https://mp.weixin.qq.com/s/4qld0uCYB2zUWyKz5IUdZw)
