@@ -907,6 +907,14 @@
 ### Rust
 
 
+**标题:** 天工开物 #8 Async Rust 的实现
+
+**链接:** https://mp.weixin.qq.com/s?__biz=MzIzMDEwODM5OQ==&mid=2647852488&idx=1&sn=a18bcacb762aab63fb5248b549b3e89f&scene=21&poc_token=HJaYuWijufo2lKTncLeJZ4TZxe1sup4ykdU0lIJI
+
+**摘要:** 本文介绍了一款视频小程序，用户可以通过轻点两下实现点赞或取消点赞，以及取消“在看”状态，操作简便，提升了观看互动体验。
+
+---
+
 **标题:** Cutting Down Rust Compile Times From 30 to 2 Minutes With One Thousand Crates
 
 **链接:** https://www.feldera.com/blog/cutting-down-rust-compile-times-from-30-to-2-minutes-with-one-thousand-crates
