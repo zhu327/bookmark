@@ -1,3 +1,4 @@
+- [Why I Ditched Spotify, and How I Set Up My Own Music Stack | LeshiCodes](https://leshicodes.github.io/blog/spotify-migration/)
 - [天工开物 #8 Async Rust 的实现](https://mp.weixin.qq.com/s?__biz=MzIzMDEwODM5OQ==&mid=2647852488&idx=1&sn=a18bcacb762aab63fb5248b549b3e89f&scene=21&poc_token=HJaYuWijufo2lKTncLeJZ4TZxe1sup4ykdU0lIJI)
 - [Cognition | Don’t Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents#applying-the-principles)
 - [Google 发布了Nano Banana编写最佳提示词，提供了10种场景_AI_程序员海军_InfoQ写作社区](https://xie.infoq.cn/article/41d80c048845e0de5113a2988)
