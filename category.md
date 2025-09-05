@@ -1489,6 +1489,14 @@
 本类别收录与日常生活、个人理财、房产选购、社保知识、设备使用技巧等相关的实用信息。
 
 
+**标题:** Why I Ditched Spotify, and How I Set Up My Own Music Stack | LeshiCodes
+
+**链接:** https://leshicodes.github.io/blog/spotify-migration/
+
+**摘要:** 作者因Spotify付费给艺术家极低、存在虚假音乐及隐私问题，决定自建音乐流媒体系统。核心是开源音乐服务器Navidrome，通过CloudFlare Tunnel实现安全远程访问，配合Lidarr管理音乐库，自动跟踪新专辑。利用lrcget-kasm获取同步歌词，Lidify结合Last.fm实现音乐推荐。自建方案支持无损音质、完全拥有音乐、隐私保护且无订阅费，且通过购买正版音乐直接支持艺术家。虽需一定技术维护，但极大提升了音乐体验自由度和所有权。未来将继续优化自动化和发现功能。
+
+---
+
 **标题:** 任天堂Switch销量超百万的游戏列表及下载
 
 **链接:** https://mianao.info/nintendo-switch-games-list-download/
