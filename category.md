@@ -907,6 +907,14 @@
 ### Rust
 
 
+**标题:** Elements of Rust – Core Types and Traits
+
+**链接:** https://rustcurious.com/elements/
+
+**摘要:** 本文系统梳理了Rust语言的核心类型与内置特征（traits），涵盖标量类型（如整数、布尔、字符）、复合类型（元组、结构体、枚举等）、无大小类型（切片、动态特征对象）、借用引用类型、范围类型、实用类型（Option、Result等）、异步支持类型、匿名类型、unsafe支持类型、原始指针、函数指针及各种操作符特征（算术、位运算、比较、调用等）。此外，还介绍了内存管理、迭代、线程安全、异步支持、异常处理和程序终止等相关特征。文章强调Rust核心类型与特征的语言内建属性，区别于库实现，助力嵌入式及无标准库环境开发。
+
+---
+
 **标题:** 天工开物 #8 Async Rust 的实现
 
 **链接:** https://mp.weixin.qq.com/s?__biz=MzIzMDEwODM5OQ==&mid=2647852488&idx=1&sn=a18bcacb762aab63fb5248b549b3e89f&scene=21&poc_token=HJaYuWijufo2lKTncLeJZ4TZxe1sup4ykdU0lIJI
