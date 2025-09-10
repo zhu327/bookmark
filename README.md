@@ -1,3 +1,4 @@
+- [Elements of Rust – Core Types and Traits](https://rustcurious.com/elements/)
 - [Why I Ditched Spotify, and How I Set Up My Own Music Stack | LeshiCodes](https://leshicodes.github.io/blog/spotify-migration/)
 - [天工开物 #8 Async Rust 的实现](https://mp.weixin.qq.com/s?__biz=MzIzMDEwODM5OQ==&mid=2647852488&idx=1&sn=a18bcacb762aab63fb5248b549b3e89f&scene=21&poc_token=HJaYuWijufo2lKTncLeJZ4TZxe1sup4ykdU0lIJI)
 - [Cognition | Don’t Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents#applying-the-principles)
