@@ -1,3 +1,4 @@
+- [介绍 - Anki 手册](https://open-spaced-repetition.github.io/anki-manual-zh-CN/intro.html)
 - [Memory Allocation in Go](https://nghiant3223.github.io/2025/06/03/memory_allocation_in_go.html)
 - [Magical systems thinking - Works in Progress Magazine](https://worksinprogress.co/issue/magical-systems-thinking/)
 - [Elements of Rust – Core Types and Traits](https://rustcurious.com/elements/)
