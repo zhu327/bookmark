@@ -5,6 +5,14 @@
 本类别涵盖了关于个人成长、学习方法、技术写作、团队协作和职业发展的文章。
 
 
+**标题:** 介绍 - Anki 手册
+
+**链接:** https://open-spaced-repetition.github.io/anki-manual-zh-CN/intro.html
+
+**摘要:** Anki 手册提供详尽的使用指南，涵盖安装、升级、故障排除及多平台支持（Windows、macOS、Linux）。内容包括入门教程、卡片制作、同步、插件管理等，帮助用户高效利用Anki进行间隔重复学习。手册支持多语言翻译，并提供历史版本文档，方便不同需求用户查阅。用户可通过手册快速入门或深入学习，解决使用中遇到的问题，提升学习效果。
+
+---
+
 **标题:** Magical systems thinking - Works in Progress Magazine
 
 **链接:** https://worksinprogress.co/issue/magical-systems-thinking/
