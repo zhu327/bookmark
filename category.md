@@ -514,6 +514,14 @@
 本类别关注系统运维、网站可靠性工程(SRE)、高可用架构、性能压测、监控、CMDB建设及网络性能优化等主题。
 
 
+**标题:** Intelligent Kubernetes Load Balancing at Databricks
+
+**链接:** https://www.databricks.com/blog/intelligent-kubernetes-load-balancing-databricks
+
+**摘要:** Databricks针对Kubernetes默认的基于Layer 4的负载均衡在高性能gRPC服务间通信中的不足，开发了基于客户端的智能负载均衡系统。该系统通过自建控制平面实时发现服务端点，客户端直接获取健康状态和拓扑信息，实现基于应用层的逐请求调度，采用“二选一”等先进策略，显著降低尾延迟、均衡负载并提升资源利用率。相比传统kube-proxy和DNS依赖，该方案减少了流量倾斜和资源浪费，支持区域亲和和动态路由。实践中，系统提升了请求分布均匀性和延迟稳定性，减少了约20%资源开销。未来将探索跨集群负载均衡及AI场景下的加权调度策略。
+
+---
+
 **标题:** Using Podman, Compose and BuildKit · emersion
 
 **链接:** https://emersion.fr/blog/2025/using-podman-compose-and-buildkit/
