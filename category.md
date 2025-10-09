@@ -931,6 +931,14 @@
 ### Rust
 
 
+**标题:** Cancelling async Rust ꞏ sunshowers
+
+**链接:** https://sunshowers.io/posts/cancelling-async-rust/
+
+**摘要:** 本文基于RustConf 2025演讲，深入探讨了异步Rust中的取消机制。作者介绍了取消的定义、异步Future的惰性特性及其取消的“通用协议”——即通过丢弃Future实现取消。文中区分了局部的“取消安全”（cancel safety）与全局的“取消正确性”（cancel correctness），并分析了如Tokio互斥锁和MPSC通道发送等常见的取消安全问题。针对取消导致的资源丢失和状态不一致，提出了分步设计API、避免取消关键Future、使用任务（task）代替Future等实践方案。最后指出当前Rust缺乏系统性取消解决方案，呼吁未来引入异步析构或线性类型等机制以提升取消的安全性和可预测性。
+
+---
+
 **标题:** Elements of Rust – Core Types and Traits
 
 **链接:** https://rustcurious.com/elements/
