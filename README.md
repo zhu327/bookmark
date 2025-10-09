@@ -1,3 +1,4 @@
+- [Cancelling async Rust ꞏ sunshowers](https://sunshowers.io/posts/cancelling-async-rust/)
 - [Intelligent Kubernetes Load Balancing at Databricks](https://www.databricks.com/blog/intelligent-kubernetes-load-balancing-databricks)
 - [介绍 - Anki 手册](https://open-spaced-repetition.github.io/anki-manual-zh-CN/intro.html)
 - [Memory Allocation in Go](https://nghiant3223.github.io/2025/06/03/memory_allocation_in_go.html)
