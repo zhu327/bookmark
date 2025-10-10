@@ -1529,6 +1529,14 @@
 本类别收录与日常生活、个人理财、房产选购、社保知识、设备使用技巧等相关的实用信息。
 
 
+**标题:** BeddySongs
+
+**链接:** https://beddysongs.com/zh
+
+**摘要:** 全球儿歌乐园BeddySongs汇集了来自30多个国家的1000多首优质儿歌，涵盖摇篮曲、动作歌、数字歌等多种类型，适合0-8岁不同年龄段儿童。平台通过多维分类（国家、类型、年龄）便于家长为孩子挑选合适歌曲，促进语言发展、情感培养及文化认知。内容安全健康，核心功能免费开放，深受家长信赖。网站还提供全球儿歌地图，帮助孩子感受多元文化，开启快乐的音乐成长之旅。
+
+---
+
 **标题:** Why I Ditched Spotify, and How I Set Up My Own Music Stack | LeshiCodes
 
 **链接:** https://leshicodes.github.io/blog/spotify-migration/
