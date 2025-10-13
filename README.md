@@ -1,3 +1,4 @@
+- [云原生架构笔记](https://zouyingjie.github.io/cloudnativenotes/end/about.html)
 - [BeddySongs](https://beddysongs.com/zh)
 - [Cancelling async Rust ꞏ sunshowers](https://sunshowers.io/posts/cancelling-async-rust/)
 - [Intelligent Kubernetes Load Balancing at Databricks](https://www.databricks.com/blog/intelligent-kubernetes-load-balancing-databricks)
