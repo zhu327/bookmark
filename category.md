@@ -136,6 +136,14 @@
 此类别包含了关于软件架构设计、设计模式、领域驱动设计(DDD)、微服务、代码重构、Code Review等软件工程最佳实践的文章。
 
 
+**标题:** 云原生架构笔记
+
+**链接:** https://zouyingjie.github.io/cloudnativenotes/end/about.html
+
+**摘要:** 《云原生架构笔记》由作者基于六年云原生架构实践沉淀而成，涵盖基础设计、分布式系统理论与工程、及云原生架构五大模块。内容包括数据建模、API设计、分布式锁、共识算法、Kubernetes、服务治理、流量治理、可观测性和DevOps等，结合实际项目经验系统总结。书籍仍在编写中，已完成约13万字，旨在帮助程序员提升技术能力，同时缅怀导师左耳朵耗子对作者职业成长的深远影响。欢迎技术爱好者交流学习，共同进步。
+
+---
+
 **标题:** Everything I know about good system design
 
 **链接:** https://www.seangoedecke.com/good-system-design/
