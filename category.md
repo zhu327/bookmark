@@ -522,6 +522,14 @@
 本类别关注系统运维、网站可靠性工程(SRE)、高可用架构、性能压测、监控、CMDB建设及网络性能优化等主题。
 
 
+**标题:** NGINX 原生 ACME 支持：从根本上重塑 TLS 自动化部署
+
+**链接:** https://sconts.com/post/nginx-native-acme-support/
+
+**摘要:** NGINX官方发布的`ngx_http_acme_module`模块，实现了SSL/TLS证书管理的原生自动化，彻底革新了传统依赖Certbot和Cron的脆弱流程。该模块基于HTTP-01挑战，将证书验证与管理深度集成于NGINX配置中，提升了运维可靠性、安全性及配置统一性，符合基础设施即代码（IaC）理念。安装需NGINX 1.25.1及以上版本，支持动态模块编译加载。此举标志着TLS自动化管理从外部工具向服务器内核能力的根本转变，为现代网络架构带来更稳定、高效的证书生命周期管理方案。
+
+---
+
 **标题:** Intelligent Kubernetes Load Balancing at Databricks
 
 **链接:** https://www.databricks.com/blog/intelligent-kubernetes-load-balancing-databricks
