@@ -1,3 +1,4 @@
+- [NGINX 原生 ACME 支持：从根本上重塑 TLS 自动化部署](https://sconts.com/post/nginx-native-acme-support/)
 - [云原生架构笔记](https://zouyingjie.github.io/cloudnativenotes/end/about.html)
 - [BeddySongs](https://beddysongs.com/zh)
 - [Cancelling async Rust ꞏ sunshowers](https://sunshowers.io/posts/cancelling-async-rust/)
