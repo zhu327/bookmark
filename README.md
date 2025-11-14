@@ -1,3 +1,4 @@
+- [《程序员的认知心得》](https://renzhi.shaogefenhao.com/)
 - [用golang开发系统软件的总结 - ahfuzhang - 博客园](https://www.cnblogs.com/ahfuzhang/p/16745742.html)
 - [编写可维护的Go代码](https://colobu.com/2022/01/15/Writing-maintainable-Go-code/)
 - [NGINX 原生 ACME 支持：从根本上重塑 TLS 自动化部署](https://sconts.com/post/nginx-native-acme-support/)
