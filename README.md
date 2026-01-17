@@ -1,3 +1,4 @@
+- [从认知心理学看代码可读性](https://disksing.com/cognitive-code-readability/)
 - [Anthropic 研究员亲述：用代码、MCP、Skills 构建高效 Claude 智能体的方法论 ｜Anthropic 播客](https://mp.weixin.qq.com/s/6XZztmjHxeEbvhlXQXoM4Q)
 - [设计数据密集型应用（第二版）](http://ddia.vonng.com/)
 - [《程序员的认知心得》](https://renzhi.shaogefenhao.com/)
